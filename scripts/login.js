@@ -23,20 +23,36 @@ document.addEventListener("DOMContentLoaded", ()=> {
 });
 
 document.getElementById("register").addEventListener("click", () => {
+    event.preventDefault();
     const username = document.getElementById("newUsername").value;
     const email = document.getElementById("newEmail").value;
     const password = document.getElementById("newPassword").value;
     const confirmPassword = document.getElementById("confirmPassword").value;
     if(password != confirmPassword){
-        
-    }
+        document.getElementById("registerError").classList.remove("hide");
+    } else {
     fetch("https://jobysseyapi.herokuapp.com/api/v1/company/".concat(username, "/", password)).then(response=>{
         return response.json();
     }).then(json=>{
-        if(json['username'] != "fake"){
+        if(json['username'] == "fake"){
+
+            var str = "https://jobysseyapi.herokuapp.com/api/v1/company/user/";
+
+                let data = {name:username, password:password, email:email, applications:null, interiviews:null};
+
+                fetch(str, {
+                    method: "POST",
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(data)
+                });
+            
+
             window.location.replace("../html/index.html");
+        } else {
+            document.getElementById("registerError").classList.remove("hide");
         }
     })
+}
 });
 
 document.getElementById("loginButton").addEventListener("click", () => {
@@ -45,7 +61,7 @@ document.getElementById("loginButton").addEventListener("click", () => {
     fetch("https://jobysseyapi.herokuapp.com/api/v1/company/".concat(username, "/", password)).then(response=>{
         return response.json();
     }).then(json=>{
-        if(json['username'] != "fake"){
+        if(json['username'] != "fake" && json['status'] != 500){
             window.location.replace("../html/index.html");
             localStorage.setItem("application", json['applications']);
             localStorage.setItem("interview", json['interviews']);
