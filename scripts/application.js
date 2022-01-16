@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", ()=> {
     const add = document.querySelector(".add");
     const push = document.querySelector(".push");
+    const displayDiv = document.querySelector(".display");
     var selection = document.querySelector(".selection");
 
     add.addEventListener('click', () => {
@@ -22,10 +23,36 @@ document.addEventListener("DOMContentLoaded", ()=> {
         add.innerHTML = "Add new application";
 
         const newDiv = document.createElement("div");
-        const newContent = document.createTextNode("Test");
-        newDiv.appendChild(newContent);
+        const newComp = document.createElement("p");
+        const newPos = document.createElement("p");
+        const interview = document.createElement("p");
+        const buttons = document.createElement("div");
+        const checkBtn = document.createElement("button");
+        const crossBtn = document.createElement("button");
 
-        const displayDiv = document.querySelector(".display");
+
+        const comp = "Netflix";
+        const pos = "interndev";
+
+        newComp.innerHTML = comp;
+        newPos.innerHTML = pos;
+        interview.innerHTML = "Interview?"
+
+        
+        buttons.appendChild(checkBtn);
+        buttons.appendChild(crossBtn);
+        newDiv.appendChild(newComp);
+        newDiv.appendChild(newPos);
+        newDiv.appendChild(interview);
+        newDiv.appendChild(buttons);
+
+
+        buttons.classList.add("buttons");
+        checkBtn.classList.add("check");
+        crossBtn.classList.add("cross");
+        interview.classList.add("inter");
+        newComp.classList.add("newComp");
+        newDiv.classList.add('display-cell');
         displayDiv.appendChild(newDiv);
     });
 
