@@ -52,6 +52,7 @@ body {
   display: none;
   position: float;
   color: black;
+  padding: 30%;
 }
 
 .application .container {
