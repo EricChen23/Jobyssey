@@ -12,9 +12,14 @@ document.addEventListener("DOMContentLoaded", ()=> {
             selection.style.display = 'none';
             add.innerHTML = "Add new application";
         }
+
+        
+        fetch('https://jobysseyapi.herokuapp.com/api/v1/company/getCompany').then(response=>{
+            console.log(response);
+        })
     });
 
-    push.addEventListener('click', () => {
+    push.addEventListener('click', async () => {
         // push to database and display
         /*
         
@@ -30,9 +35,11 @@ document.addEventListener("DOMContentLoaded", ()=> {
         const checkBtn = document.createElement("button");
         const crossBtn = document.createElement("button");
 
+        const comsel = document.querySelector(".comselect");
+        const possel = document.querySelector(".posselect");
 
-        const comp = "Netflix";
-        const pos = "interndev";
+        const comp = comsel.options[comsel.selectedIndex].text;
+        const pos = possel.options[possel.selectedIndex].text;
 
         newComp.innerHTML = comp;
         newPos.innerHTML = pos;
