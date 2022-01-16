@@ -26,6 +26,14 @@ document.addEventListener("DOMContentLoaded", ()=> {
         /*
         
         */
+
+        const comsel = document.querySelector(".cominput");
+        const comp = comsel.value;
+
+        if (comp === "") {
+            return;
+        }
+
         selection.style.display = 'none';
         add.innerHTML = "Add new application";
 
@@ -37,10 +45,8 @@ document.addEventListener("DOMContentLoaded", ()=> {
         const checkBtn = document.createElement("button");
         const crossBtn = document.createElement("button");
 
-        const comsel = document.querySelector(".comselect");
         const possel = document.querySelector(".posselect");
 
-        const comp = comsel.options[comsel.selectedIndex].text;
         const pos = possel.options[possel.selectedIndex].text;
 
         newComp.innerHTML = comp;

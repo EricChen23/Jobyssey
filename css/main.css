@@ -18,6 +18,10 @@ body {
   color: #130b13;
 }
 
+textarea {
+  resize: none;
+}
+
 .application {
   margin: 5em;
 }
