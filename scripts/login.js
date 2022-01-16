@@ -28,6 +28,7 @@ document.getElementById("register").addEventListener("click", () => {
     const email = document.getElementById("newEmail").value;
     const password = document.getElementById("newPassword").value;
     const confirmPassword = document.getElementById("confirmPassword").value;
+
     if(password != confirmPassword){
         document.getElementById("registerError").classList.remove("hide");
     } else {
@@ -38,7 +39,7 @@ document.getElementById("register").addEventListener("click", () => {
 
             var str = "https://jobysseyapi.herokuapp.com/api/v1/company/user/";
 
-                let data = {name:username, password:password, email:email, applications:null, interiviews:null};
+                let data = {name:username, password:password, email:email, applications:null, interviews:null};
 
                 fetch(str, {
                     method: "POST",
