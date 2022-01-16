@@ -48,6 +48,8 @@ document.getElementById("register").addEventListener("click", () => {
                     body: JSON.stringify(data)
                 });          
             window.location.replace("../html/index.html");
+            localStorage.setItem("application", null);
+            localStorage.setItem("interview", null);
         } else {
             console.log("new user failed to add");
             document.getElementById("registerError").classList.remove("hide");

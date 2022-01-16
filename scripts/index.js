@@ -9,12 +9,13 @@ document.addEventListener("DOMContentLoaded", ()=> {
     const userApp = localStorage.getItem("application");
     const userInt = localStorage.getItem("interview");
 
-    const userAppArr = userApp.split(", ");
-    const userIntArr = userInt.split(", ");
+    let userAppArr = [];
+    let userIntArr = [];
 
-    console.log(userApp);
-
-    console.log(userInt);
+    if (userApp != null) {
+    userAppArr = userApp.split(", ");
+    userIntArr = userInt.split(", ");
+    } 
 
     var total_app = userAppArr.length;
     var total_int = userIntArr.length;
