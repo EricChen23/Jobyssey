@@ -20,6 +20,13 @@ document.addEventListener("DOMContentLoaded", ()=> {
         */
         selection.style.display = 'none';
         add.innerHTML = "Add new application";
+
+        const newDiv = document.createElement("div");
+        const newContent = document.createTextNode("Test");
+        newDiv.appendChild(newContent);
+
+        const displayDiv = document.querySelector(".display");
+        displayDiv.appendChild(newDiv);
     });
 
 
