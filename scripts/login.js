@@ -47,6 +47,8 @@ document.getElementById("loginButton").addEventListener("click", () => {
     }).then(json=>{
         if(json['username'] != "fake"){
             window.location.replace("../html/index.html");
+            localStorage.setItem("application", json['applications']);
+            localStorage.setItem("interview", json['interviews']);
         } else {
             document.getElementById("loginError").classList.remove("hide");
         }
