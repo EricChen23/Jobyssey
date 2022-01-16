@@ -25,9 +25,10 @@ document.addEventListener("DOMContentLoaded", ()=> {
             var str = userAppArr[i].toUpperCase();
             var aCount = 0;
             var iCount = 0;
+            var name;
             for(var j = 0; j < json.length; j++) {
                 var obj = json[j];
-                var name = obj.name;
+                name = obj.name;
                 if (name != null) {
                     name = name.toUpperCase();
                     if (name.localeCompare(str) == 0) {
@@ -38,55 +39,97 @@ document.addEventListener("DOMContentLoaded", ()=> {
                 }
             }
 
-            apparr.push(str);
-            selection.style.display = 'none';
-            add.innerHTML = "Add new application";
+            if (name != null) {
+                apparr.push(str);
+                selection.style.display = 'none';
+                add.innerHTML = "Add new application";
 
-            const newDiv = document.createElement("div");
-            const newComp = document.createElement("p");
-            const numApp = document.createElement("p");
-            const numInt = document.createElement("p");
-            const interview = document.createElement("p");
-            const buttons = document.createElement("div");
-            const checkBtn = document.createElement("button");
-            const crossBtn = document.createElement("button");
-            
+                const newDiv = document.createElement("div");
+                const newComp = document.createElement("p");
+                const numApp = document.createElement("p");
+                const numInt = document.createElement("p");
+                const interview = document.createElement("p");
+                const buttons = document.createElement("div");
+                const checkBtn = document.createElement("button");
+                const crossBtn = document.createElement("button");
+                
 
-            newComp.innerHTML = str;
-            numApp.innerHTML = "Number of Applications: ".concat(aCount);
-            numInt.innerHTML = "Number of Interviews: ".concat(iCount);
-            interview.innerHTML = "Interview?"
+                newComp.innerHTML = str;
+                numApp.innerHTML = "Number of Applications: ".concat(aCount);
+                numInt.innerHTML = "Number of Interviews: ".concat(iCount);
+                interview.innerHTML = "Interview?"
 
-            
-            buttons.appendChild(checkBtn);
-            buttons.appendChild(crossBtn);
-            newDiv.appendChild(newComp);
-            newDiv.appendChild(numApp);
-            newDiv.appendChild(numInt);
-            newDiv.appendChild(interview);
-            newDiv.appendChild(buttons);
+                
+                buttons.appendChild(checkBtn);
+                buttons.appendChild(crossBtn);
+                newDiv.appendChild(newComp);
+                newDiv.appendChild(numApp);
+                newDiv.appendChild(numInt);
+                newDiv.appendChild(interview);
+                newDiv.appendChild(buttons);
 
 
-            buttons.classList.add("buttons");
-            checkBtn.classList.add("check");
-            crossBtn.classList.add("cross");
-            interview.classList.add("inter");
-            newComp.classList.add("newComp");
-            newDiv.classList.add('display-cell');
+                buttons.classList.add("buttons");
+                checkBtn.classList.add("check");
+                crossBtn.classList.add("cross");
+                interview.classList.add("inter");
+                newComp.classList.add("newComp");
+                newDiv.classList.add('display-cell');
 
-            
-            const aCountID = str.concat("app");
-            const iCountID = str.concat("int");
+                
+                const aCountID = str.concat("app");
+                const iCountID = str.concat("int");
 
-            numApp.setAttribute('id', aCountID);
-            numInt.setAttribute('id', iCountID);
+                numApp.setAttribute('id', aCountID);
+                numInt.setAttribute('id', iCountID);
 
-            checkBtn.setAttribute('id', str);
-            crossBtn.setAttribute('id', str);
+                checkBtn.setAttribute('id', str);
+                crossBtn.setAttribute('id', str);
 
-            const newDivAttr = str.concat("id");
-            newDiv.setAttribute('id', newDivAttr);
-            displayDiv.appendChild(newDiv);
+                const newDivAttr = str.concat("id");
+                newDiv.setAttribute('id', newDivAttr);
+                displayDiv.appendChild(newDiv);
+            }
+        }
+
+        for(var i = 0; i < userIntArr.length; i++) {
+            var str = userIntArr[i].toUpperCase();
+
+            var num_application;
+            var num_interview;
+            var name;
+
+            for(var j = 0; j < json.length; j++) {
+                var obj = json[j];
+                var name = obj.name;
+                if (name != null) {
+                    name = name.toUpperCase();
+                    if (name.localeCompare(str) == 0) {
+                        num_application = obj.applications;
+                        num_interview = obj.interviews;
+                        break;
+                    }
+                }
+            }
+
+            if (name != null) {
+                const newDiv = document.createElement("div");
+                const newComp = document.createElement("p");
+                const numInt = document.createElement("p");
+                const intchance = document.createElement("p");
+
+                newComp.innerHTML = str;
+                numInt.innerHTML = "Number of interviews: ".concat(num_interview);
+                intchance.innerHTML = "Interview chance: ".concat(num_interview, " / ", num_application);
+
+                newDiv.appendChild(newComp);
+                newDiv.appendChild(numInt);
+                newDiv.appendChild(intchance);
+
+                newComp.classList.add("comp-name");
+                newDiv.classList.add("interview-cell");
+                interviewDisplay.appendChild(newDiv);
+            }
         }
     })
 
