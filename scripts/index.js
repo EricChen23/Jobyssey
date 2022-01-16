@@ -12,6 +12,9 @@ document.addEventListener("DOMContentLoaded", ()=> {
     const userAppArr = userApp.split(", ");
     const userIntArr = userInt.split(", ");
 
+    var total_app = userAppArr.length;
+    var total_int = userIntArr.length;
+
     var apparr = [];
 
     
@@ -224,7 +227,30 @@ document.addEventListener("DOMContentLoaded", ()=> {
                 method: "POST",
                 headers: {'Content-Type': 'application/json'}
             });
-            
+
+            const appid = e.target.id.concat("app");
+            const intid = e.target.id.concat("int");
+
+
+            const num_application = document.getElementById(appid).innerHTML.split(": ")[1];
+            const num_interview = parseInt(document.getElementById(intid).innerHTML.split(": ")[1]) + 1;
+
+            const newDiv = document.createElement("div");
+            const newComp = document.createElement("p");
+            const numInt = document.createElement("p");
+            const intchance = document.createElement("p");
+
+            newComp.innerHTML = e.target.id;
+            numInt.innerHTML = "Number of interviews: ".concat(num_interview);
+            intchance.innerHTML = "Interview chance: ".concat(num_interview, " / ", num_application);
+
+            newDiv.appendChild(newComp);
+            newDiv.appendChild(numInt);
+            newDiv.appendChild(intchance);
+
+            newComp.classList.add("comp-name");
+            newDiv.classList.add("interview-cell");
+            interviewDisplay.appendChild(newDiv);
 
             cell.remove();
         } else if (e.target && e.target.className == 'cross') {
