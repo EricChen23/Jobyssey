@@ -2,13 +2,14 @@ document.addEventListener("DOMContentLoaded", ()=> {
     const add = document.querySelector(".add");
     const push = document.querySelector(".push");
     const displayDiv = document.querySelector(".display");
+    const interviewDisplay = document.querySelector(".interviewDisplay");
     var selection = document.querySelector(".selection");
     const error = document.querySelector(".comp_error");
 
     const userApp = localStorage.getItem("application");
     const userInt = localStorage.getItem("interview");
 
-    const userAppArr = userInt.split(", ");
+    const userAppArr = userApp.split(", ");
     const userIntArr = userInt.split(", ");
 
     var apparr = [];
@@ -21,7 +22,6 @@ document.addEventListener("DOMContentLoaded", ()=> {
             var str = userAppArr[i].toUpperCase();
             var aCount = 0;
             var iCount = 0;
-            console.log(str);
             for(var j = 0; j < json.length; j++) {
                 var obj = json[j];
                 var name = obj.name;
@@ -86,7 +86,6 @@ document.addEventListener("DOMContentLoaded", ()=> {
             displayDiv.appendChild(newDiv);
         }
     })
-        
 
     add.addEventListener('click', () => {
         if (selection.style.display === 'none') {
@@ -216,11 +215,23 @@ document.addEventListener("DOMContentLoaded", ()=> {
         
     });
 
+    displayDiv.addEventListener('click',function(e){
+        if(e.target && e.target.className == 'check'){
+            var id = e.target.id.concat("id");
+            const cell = document.getElementById(id);
+            var str = "https://jobysseyapi.herokuapp.com/api/v1/company/".concat(e.target.id, "/1");
+            fetch(str, {
+                method: "POST",
+                headers: {'Content-Type': 'application/json'}
+            });
+            
 
+            cell.remove();
+        } else if (e.target && e.target.className == 'cross') {
+            var id = e.target.id.concat("id");
+            const cell = document.getElementById(id);
+            cell.remove();
+        }
+    });
 
 });
-
-
-
-
-
