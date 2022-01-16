@@ -6,20 +6,67 @@ body {
 }
 
 .logo {
-  padding: 0.5em;
   text-align: center;
   text-decoration: none;
   font-weight: bold;
   color: #ff00bf;
-  font-size: 2em;
+  font-size: 4em;
+  border-bottom: 2px solid #cfd8dc;
 }
 
 .logo span {
   color: #130b13;
 }
 
-section {
-  padding: 5em 2em;
+.application {
+  margin: 5em;
+}
+
+.application .title {
+  text-decoration: none;
+  font-size: 2em;
+}
+
+.application .add {
+  font-size: 1.5em;
+  padding: 1em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  height: 4em;
+  background-color: #2962ff;
+  color: white;
+  cursor: pointer;
+  border-radius: 0.2em;
+  outline: none;
+  -webkit-transition: all 10ms ease-in;
+  transition: all 10ms ease-in;
+  font-weight: bold;
+}
+
+.application .add:hover {
+  background-color: #0d47a1;
+}
+
+.application .selection {
+  display: none;
+  position: float;
   color: black;
+}
+
+.application .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  place-content: space-between;
+}
+
+.interview {
+  margin: 5em;
+}
+
+.interview .title {
+  text-decoration: none;
+  font-size: 2em;
 }
 /*# sourceMappingURL=main.css.map */

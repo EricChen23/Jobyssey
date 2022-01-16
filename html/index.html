@@ -1,27 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jobyssey</title>
-    <link rel="stylesheet" href="../css/main.css">
-</head>
-<body>
-    <div class="logo">
-            <p><span>Job</span>yssey</p>
-    </div>
-
-    <section class="application">
-        <div class="container">
-            <p>one</p>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jobyssey</title>
+        <link rel="stylesheet" href="../css/main.css">
+    </head>
+    <body>
+        <div class="logo">
+                <p><span>Job</span>yssey</p>
         </div>
-    </section>
 
-    <section class="interview">
-        <div class="container">
-            <p>two</p>
-        </div>
-    </section>
-</body>
+        <section class="application">
+            <div class="container">
+                <p class="title">Applications</p>
+                <button class="add">Add new application</button>
+            </div>
+
+            <div class="selection">
+                <label for="company" id="company">Company: </label>
+                <select name="company">
+                    <option value="meta">Meta</option>
+                    <option value="google">Google</option>
+                    <option value="amazon">Amazon</option>
+                    <option value="apple">Apple</option>
+                    <option value="netflix">Netflix</option>
+                    <option value="ibm">IBM</option>
+                    <option value="arista">Arista</option>
+                    <option value="td">TD</option>
+                    <option value="rbc">RBC</option>
+                </select>
+
+                <label for="position" id="position">Position: </label>
+                <select name="position" id="position">
+                    <option value="interndev">Intern Software Dev</option>
+                    <option value="juniordev">Junior Software Dev</option>
+                    <option value="seniordev">Senior Software Dev</option>
+                    <option value="qa">Quality Assurance</option>
+                </select>
+                <button class="push">Add</button>
+                <button class="cancel">Cancel</button>
+            </div>
+
+            <main>
+                <div class="display">
+
+                </div>
+            </main>
+        </section>
+
+        <section class="interview">
+            <p class="title">Interviews</p>
+            <div class="container">
+
+            </div>
+        </section>
+    </body>
+    
+    <script src="../scripts/application.js"></script>
 </html>
