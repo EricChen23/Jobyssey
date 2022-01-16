@@ -15,8 +15,13 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
     push.addEventListener('click', () => {
         // push to database and display
+        /*
+        
+        */
         selection.style.display = 'none';
+        add.innerHTML = "Add new application";
     });
+
 
 
 });

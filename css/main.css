@@ -55,6 +55,23 @@ body {
   padding: 30%;
 }
 
+.application .selection .push {
+  padding: 1em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border-radius: 0.2em;
+  outline: none;
+  -webkit-transition: all 10ms ease-in;
+  transition: all 10ms ease-in;
+  font-weight: bold;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+}
+
 .application .container {
   display: -webkit-box;
   display: -ms-flexbox;

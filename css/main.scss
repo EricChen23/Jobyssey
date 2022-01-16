@@ -53,7 +53,21 @@ body {
         position: float;
         color: black;
         padding: 30%;
-        
+
+        .push {
+            padding: 1em;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            border-radius: 0.2em;
+            outline: none;
+            transition: all 10ms ease-in;
+            font-weight: bold;
+            align-content: flex-end;
+        }
     }
 
     .container {
