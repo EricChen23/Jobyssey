@@ -307,6 +307,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
             if (index > -1) {
                 apparr.splice(index, 1);
             }
+
             cell.remove();
         }
     });
