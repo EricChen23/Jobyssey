@@ -17,4 +17,9 @@ body {
 .logo span {
   color: #130b13;
 }
+
+section {
+  padding: 5em 2em;
+  color: black;
+}
 /*# sourceMappingURL=main.css.map */
