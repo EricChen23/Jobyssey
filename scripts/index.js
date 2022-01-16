@@ -299,6 +299,10 @@ document.addEventListener("DOMContentLoaded", ()=> {
         } else if (e.target && e.target.className == 'cross') {
             var id = e.target.id.concat("id");
             const cell = document.getElementById(id);
+            const index = apparr.indexOf(e.target.id);
+            if (index > -1) {
+                apparr.splice(index, 1);
+            }
             cell.remove();
         }
     });
