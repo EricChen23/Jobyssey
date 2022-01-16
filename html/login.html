@@ -11,24 +11,56 @@
     <div class="container">
         <form class= "form" id="login">
             <h1 class = "form_title"> 
-                login
+                Welcome to Jobyssey
             </h1>
             <div class ="error_message">Incorrect Username or Password</div>
 
             <div class="form_input">
-                <input type="text" class="username_input" autofocus placeholder = "Username">
+                <input type="text" class="user_input" autofocus placeholder = "Username">
             </div>
 
             <div class="form_input">
-                <input type="password" class="password_input" autofocus placeholder = "Password">
+                <input type="password" class="user_input" autofocus placeholder = "Password">
             </div>
+
             <button class="login" type="submit">Login</button>
+
             <p class = "forgot_password">
                 <a href='#' class="forgot_link">Reset Password</a>
             </p>
 
             <p class = "register">
-                <a class="register" id="createAccount">Register</a>
+                <a class="register" id="createAccountLink">Register</a>
+            </p>
+
+        </form>
+
+        <form class= "form hide" id="createAccount">
+            <h1 class = "form_title"> 
+                Welcome to Jobyssey
+            </h1>
+            <div class ="error_message">Incorrect Username or Password</div>
+
+            <div class="form_input">
+                <input type="text" class="user_input" autofocus placeholder = "Username">
+            </div>
+
+            <div class="form_input">
+                <input type="text" class="user_input" autofocus placeholder = "Email Address">
+            </div>
+
+            <div class="form_input">
+                <input type="password" class="user_input" autofocus placeholder = "Password">
+            </div>
+
+            <div class="form_input">
+                <input type="password" class="user_input" autofocus placeholder = "Confirm Password">
+            </div>
+
+            <button class="login" type="submit">Register</button>
+
+            <p class = "have_account">
+                <a href='#' class="login_instead" id="haveAccountLink">Have Account</a>
             </p>
 
         </form>
