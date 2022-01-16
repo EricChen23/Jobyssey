@@ -68,6 +68,11 @@ body {
             font-weight: bold;
             align-content: flex-end;
         }
+
+        .comp_error {
+            color: red;
+            display: none;
+        }
     }
 
     .container {

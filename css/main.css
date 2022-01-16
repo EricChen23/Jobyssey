@@ -18,10 +18,6 @@ body {
   color: #130b13;
 }
 
-textarea {
-  resize: none;
-}
-
 .application {
   margin: 5em;
 }
@@ -73,6 +69,11 @@ textarea {
   font-weight: bold;
   -ms-flex-line-pack: end;
       align-content: flex-end;
+}
+
+.application .selection .comp_error {
+  color: red;
+  display: none;
 }
 
 .application .container {

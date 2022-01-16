@@ -13,14 +13,12 @@ document.addEventListener("DOMContentLoaded", ()=> {
     });
 
     document.querySelector("#loginButton").addEventListener("click", () => {
-        const username = document.querySelector("#username").value;
-        const password = document.querySelector("#password").value;
+        event.preventDefault();
+        const username = document.getElementById("username").value;
+        console.log(username);
 
-        fetch('https://jobysseyapi.herokuapp.com/api/v1/company/login').then(response=>{
-            return response.json();
-        }).then(json=>{
-            console.log(json);
-        })
+        const password = document.getElementById("password").value;
+        console.log(password);
     });
 });
 
