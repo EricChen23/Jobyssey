@@ -5,12 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jobyssey Login</title>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
-    <ul class="user">
-        <li class="register"><a href="#">Register</a></li>
-        <li class="login"><a href="index.html">Log in</a></li>
-    </ul>
+    <div class="container">
+        <form class= "form" id="login">
+            <h1 class = "form_title"> 
+                login
+            </h1>
+            <div class ="error_message">Incorrect Username or Password</div>
+
+            <div class="form_input">
+                <input type="text" class="username_input" autofocus placeholder = "Username">
+            </div>
+
+            <div class="form_input">
+                <input type="password" class="password_input" autofocus placeholder = "Password">
+            </div>
+            <button class="login" type="submit">Login</button>
+            <p class = "forgot_password">
+                <a href='#' class="forgot_link">Reset Password</a>
+            </p>
+
+            <p class = "register">
+                <a class="register" id="createAccount">Register</a>
+            </p>
+
+        </form>
+    </div>
 </body>
+
+
+<script src="../scripts/login.js"></script>
 </html>
