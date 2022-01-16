@@ -13,7 +13,7 @@
             <h1 class = "form_title"> 
                 Welcome to Jobyssey
             </h1>
-            <div class ="error_message">Incorrect Username or Password</div>
+            <div class ="error_message hide" id = "loginError">Incorrect Username or Password</div>
 
             <div class="form_input">
                 <input type="text" id = "username" class="user_input" autofocus placeholder = "Username">
@@ -39,25 +39,25 @@
             <h1 class = "form_title"> 
                 Welcome to Jobyssey
             </h1>
-            <div class ="error_message">Incorrect Username or Password</div>
+            <div class ="error_message hide">Incorrect Username or Password</div>
 
             <div class="form_input">
-                <input type="text" class="user_input" autofocus placeholder = "Username">
+                <input type="text" id = "newUsername" class="user_input" autofocus placeholder = "Username">
             </div>
 
             <div class="form_input">
-                <input type="text" class="user_input" autofocus placeholder = "Email Address">
+                <input type="text" id = "newEmail" class="user_input" autofocus placeholder = "Email Address">
             </div>
 
             <div class="form_input">
-                <input type="password" class="user_input" autofocus placeholder = "Password">
+                <input type="password" id = "newPassword" class="user_input" autofocus placeholder = "Password">
             </div>
 
             <div class="form_input">
-                <input type="password" class="user_input" autofocus placeholder = "Confirm Password">
+                <input type="password" id = "confirmPassword" class="user_input" autofocus placeholder = "Confirm Password">
             </div>
 
-            <button class="login" type="submit">Register</button>
+            <button class="login" id = "register" type="submit">Register</button>
 
             <p class = "have_account">
                 <a href='#' class="login_instead" id="haveAccountLink">Have Account</a>
