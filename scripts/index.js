@@ -44,6 +44,11 @@ document.addEventListener("DOMContentLoaded", ()=> {
             }
 
             if (name != null) {
+                var s = "https://jobysseyapi.herokuapp.com/api/v1/company/".concat(str, "/0");
+                fetch(s, {
+                    method: "POST",
+                    headers: {'Content-Type': 'application/json'}
+                });
                 apparr.push(str);
                 selection.style.display = 'none';
                 add.innerHTML = "Add new application";
@@ -117,6 +122,11 @@ document.addEventListener("DOMContentLoaded", ()=> {
             }
 
             if (name != null) {
+                var s = "https://jobysseyapi.herokuapp.com/api/v1/company/".concat(str, "/1");
+                fetch(s, {
+                    method: "POST",
+                    headers: {'Content-Type': 'application/json'}
+                });
                 const newDiv = document.createElement("div");
                 const newComp = document.createElement("p");
                 const numInt = document.createElement("p");
