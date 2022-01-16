@@ -1,1 +1,20 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+body {
+  background: #F2F2F2;
+  margin: 0;
+  font-family: 'Poppins';
+}
+
+.logo {
+  padding: 0.5em;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  color: #ff00bf;
+  font-size: 2em;
+}
+
+.logo span {
+  color: #130b13;
+}
+/*# sourceMappingURL=main.css.map */
