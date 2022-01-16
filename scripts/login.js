@@ -30,6 +30,7 @@ document.getElementById("register").addEventListener("click", () => {
     const confirmPassword = document.getElementById("confirmPassword").value;
 
     if(password != confirmPassword){
+
         document.getElementById("registerError").classList.remove("hide");
     } else {
     fetch("https://jobysseyapi.herokuapp.com/api/v1/company/".concat(username, "/", password)).then(response=>{
@@ -39,15 +40,14 @@ document.getElementById("register").addEventListener("click", () => {
 
             var str = "https://jobysseyapi.herokuapp.com/api/v1/company/user/";
 
+
                 let data = {name:username, password:password, email:email, applications:null, interviews:null};
 
                 fetch(str, {
                     method: "POST",
                     headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify(data)
-                });
-            
-
+                });          
             window.location.replace("../html/index.html");
         } else {
             document.getElementById("registerError").classList.remove("hide");
