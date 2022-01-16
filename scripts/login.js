@@ -22,21 +22,18 @@ document.addEventListener("DOMContentLoaded", ()=> {
     });
 });
 
-document.getElementById("register").addEventListener("click", () => {
-    const username = document.getElementById("newUsername").value;
-    const email = document.getElementById("newEmail").value;
-    const password = document.getElementById("newPassword").value;
-    const confirmPassword = document.getElementById("confirmPassword").value;
-    if(password != confirmPassword){
-        
+
+document.getElementById("registerButton").addEventListener("click", () => {
+    const u = document.getElementById("newUsername").value;
+    const e = document.getElementById("newEmail").value;
+    const p = document.getElementById("newPassword").value;
+    const c = document.getElementById("confirmPassword").value;
+    if(p != c){
+        document.getElementById("registerError").classList.remove("hide");
+    } else {
+    
+        window.location.replace("../html/index.html");
     }
-    fetch("https://jobysseyapi.herokuapp.com/api/v1/company/".concat(username, "/", password)).then(response=>{
-        return response.json();
-    }).then(json=>{
-        if(json['username'] != "fake"){
-            window.location.replace("../html/index.html");
-        }
-    })
 });
 
 document.getElementById("loginButton").addEventListener("click", () => {
