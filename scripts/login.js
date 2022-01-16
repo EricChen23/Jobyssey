@@ -36,10 +36,9 @@ document.getElementById("register").addEventListener("click", () => {
     fetch("https://jobysseyapi.herokuapp.com/api/v1/company/".concat(username, "/", password)).then(response=>{
         return response.json();
     }).then(json=>{
-        if(json['username'] == "fake"){
-
+        if(json['username'] == "fake" && json['status'] != 500){
+            console.log("new user has added");
             var str = "https://jobysseyapi.herokuapp.com/api/v1/company/user/";
-
 
                 let data = {name:username, password:password, email:email, applications:null, interviews:null};
 
@@ -50,6 +49,7 @@ document.getElementById("register").addEventListener("click", () => {
                 });          
             window.location.replace("../html/index.html");
         } else {
+            console.log("new user failed to add");
             document.getElementById("registerError").classList.remove("hide");
         }
     })
