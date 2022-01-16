@@ -18,11 +18,6 @@ document.addEventListener("DOMContentLoaded", ()=> {
     });
 
     push.addEventListener('click', () => {
-        // push to database and display
-        /*
-        
-        */
-
         const comsel = document.querySelector(".cominput");
         const comp = comsel.value.toUpperCase();
 
