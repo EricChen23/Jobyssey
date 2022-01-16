@@ -15,7 +15,9 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
         
         fetch('https://jobysseyapi.herokuapp.com/api/v1/company/getCompany').then(response=>{
-            console.log(response);
+            return response.json();
+        }).then(json=>{
+            console.log(json);
         })
     });
 
