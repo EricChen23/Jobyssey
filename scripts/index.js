@@ -12,6 +12,10 @@ document.addEventListener("DOMContentLoaded", ()=> {
     const userAppArr = userApp.split(", ");
     const userIntArr = userInt.split(", ");
 
+    console.log(userApp);
+
+    console.log(userInt);
+
     var total_app = userAppArr.length;
     var total_int = userIntArr.length;
 
